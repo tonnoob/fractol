@@ -3,45 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: osousa-d <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: otton-sousa <otton-sousa@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 06:24:46 by osousa-d          #+#    #+#             */
-/*   Updated: 2026/01/24 06:24:47 by osousa-d         ###   ########.fr       */
+/*   Updated: 2026/01/26 07:04:49 by otton-sousa      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# include "./libftprintf/ft_printf/ft_printf.h"
 # include "./libftprintf/libft/libft.h"
+# include "./libftprintf/ft_printf/ft_printf.h"
 # include "./minilibx-linux/mlx.h"
 # include "./minilibx-linux/mlx_int.h"
+# include "defines.h"
+# include "structs.h"
 
-typedef struct s_complex
-{
-	double	real;
-	double	imag;
-}	t_complex;
+void	init_viewport(t_fractal *f);
+void	data_init(t_fractal *f, char *name);
+void	fractal_init(t_fractal *f);
+int		error_exit(char *msg);
+void	window_init(t_fractal *f);
+double	map(double value, double in_min, double in_max, double out_min, double out_max);
+int		fractal_iter(t_complex z, t_complex c, int max_iter);
+int		parse_args(int ac, char **av, t_fractal *f);
+int		close_handler(t_fractal *f);
+int		mouse_handler(int button, int x, int y, t_fractal *f);
+int		get_color(int iter, int max_iter);
 
-typedef struct s_fractal
-{
-	void		*mlx;
-	void		*win;
-	t_img		img;        
-	int			type;
-	char		*name;
-	double		julia_real;
-	double		julia_imag;
-	double		x_min;
-	double		x_max;
-	double		y_min; 
-	double		y_max;
-	int			max_iter;
-	double		zoom;
-	int			color_shift;
-}	t_fractal;
 
 
 #endif
