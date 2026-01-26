@@ -1,4 +1,4 @@
-#include "./includes/fractol.h"
+#include "../includes/fractol.h"
 
 int main(int ac, char **av)
 {

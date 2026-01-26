@@ -1,4 +1,4 @@
-#include "./includes/fractol.h"
+#include "../includes/fractol.h"
 
 static int parse_args(int ac, char **av, t_fractal *f)
 {

@@ -19,20 +19,20 @@ typedef struct s_complex
 	double	imag;
 }	t_complex;
 
-typedef struct s_img
+typedef struct s_image
 {
 	void	*img_ptr;
 	char	*pixels_ptr;
 	int		bpp;
 	int		line_len;
 	int		endian;
-}	t_img;
+}	t_image;
 
 typedef struct s_fractal
 {
 	void		*mlx;
 	void		*win;
-	t_img		img;
+	t_image		img;
 	int			type;
 	char		*name;
 	t_complex	julia_v;

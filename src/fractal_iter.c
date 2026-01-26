@@ -1,4 +1,4 @@
-#include "./includes/fractol.h"
+#include "../includes/fractol.h"
 
 int fractal_iter(t_complex z, t_complex c, int max_iter)
 {

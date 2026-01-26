@@ -1,4 +1,4 @@
-#include "./includes/fractol.h"
+#include "../includes/fractol.h"
 
 static void put_pixel_to_img(t_fractal *f, int x, int y, int color)
 {

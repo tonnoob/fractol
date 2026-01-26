@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/fractol.h"
+#include "../includes/fractol.h"
 
 int	close_handler(t_fractal *f)
 {

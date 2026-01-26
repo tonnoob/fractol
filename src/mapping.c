@@ -1,4 +1,4 @@
-#include "./includes/fractol.h"
+#include "../includes/fractol.h"
 
 double	map(double value, double in_min, double in_max, double out_min, double out_max)
 {

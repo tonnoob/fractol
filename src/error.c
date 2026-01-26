@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/fractol.h"
+#include "../includes/fractol.h"
 
 int	error_exit(char *msg)
 {
