@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otton-sousa <otton-sousa@student.42.fr>    +#+  +:+       +#+        */
+/*   By: osousa-d <osousa-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 06:18:25 by osousa-d          #+#    #+#             */
-/*   Updated: 2026/01/26 06:53:20 by otton-sousa      ###   ########.fr       */
+/*   Updated: 2026/01/27 11:38:44 by osousa-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ void data_init(t_fractal *f, char *name)
 {
 	f->name = name;
 
-	if (ft_strcmp(name, "mandelbrot") == 0)
+	if (ft_strcmp(name, "Mandelbrot") == 0)
 		f->type = MANDELBROT;
-	else if (ft_strcmp(name, "julia") == 0)
+	if (ft_strcmp(name, "Julia") == 0)
 		f->type = JULIA;
 	f->max_iter = MAX_ITER;
 	f->zoom = 1.0;

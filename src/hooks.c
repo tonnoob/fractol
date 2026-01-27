@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otton-sousa <otton-sousa@student.42.fr>    +#+  +:+       +#+        */
+/*   By: osousa-d <osousa-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 04:02:06 by otton-sousa       #+#    #+#             */
-/*   Updated: 2026/01/26 04:36:56 by otton-sousa      ###   ########.fr       */
+/*   Updated: 2026/01/27 11:47:33 by osousa-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,12 @@ int	mouse_handler(int button, int x, int y, t_fractal *f)
 	}
 	fractal_render(f);
 	return (0);
+}
+
+int	esc_handler(int button, t_fractal *f)
+{
+	if (button == KEY_ESC)
+		close_handler(f);
+
+	return (EXIT_SUCCESS);
 }

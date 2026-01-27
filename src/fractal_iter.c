@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fractal_iter.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: osousa-d <osousa-d@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/27 11:25:45 by osousa-d          #+#    #+#             */
+/*   Updated: 2026/01/27 11:26:34 by osousa-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/fractol.h"
 
 int fractal_iter(t_complex z, t_complex c, int max_iter)
@@ -15,4 +27,3 @@ int fractal_iter(t_complex z, t_complex c, int max_iter)
 	}
 	return iter;
 }
-

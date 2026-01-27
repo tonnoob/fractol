@@ -12,6 +12,16 @@
 
 #include "libft.h"
 
+static int	skip_spaces(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	return (i);
+}
+
 static int	parse_sign(const char *str, int *i)
 {
 	int	sign;
@@ -46,14 +56,4 @@ double	ft_atod(const char *str)
 		div *= 10;
 	}
 	return (res * sign);
-}
-
-int	skip_spaces(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	return (i);
 }
