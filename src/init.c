@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: osousa-d <osousa-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: otton-sousa <otton-sousa@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 06:18:25 by osousa-d          #+#    #+#             */
-/*   Updated: 2026/01/27 11:38:44 by osousa-d         ###   ########.fr       */
+/*   Updated: 2026/01/28 12:19:45 by otton-sousa      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-void init_viewport(t_fractal *f)
+void	init_viewport(t_fractal *f)
 {
 	if (f->type == MANDELBROT)
 	{
@@ -30,10 +30,9 @@ void init_viewport(t_fractal *f)
 	}
 }
 
-void data_init(t_fractal *f, char *name)
+void	data_init(t_fractal *f, char *name)
 {
 	f->name = name;
-
 	if (ft_strcmp(name, "Mandelbrot") == 0)
 		f->type = MANDELBROT;
 	if (ft_strcmp(name, "Julia") == 0)
@@ -44,7 +43,7 @@ void data_init(t_fractal *f, char *name)
 	init_viewport(f);
 }
 
-void fractal_init(t_fractal *f)
+void	fractal_init(t_fractal *f)
 {
 	f->img.img_ptr = mlx_new_image(f->mlx, WIDTH, HEIGHT);
 	if (!f->img.img_ptr)
@@ -53,12 +52,8 @@ void fractal_init(t_fractal *f)
 		free(f->mlx);
 		error_exit("Error: Failed to create image");
 	}
-	f->img.pixels_ptr = mlx_get_data_addr(
-		f->img.img_ptr,
-		&f->img.bpp,
-		&f->img.line_len,
-		&f->img.endian
-	);
+	f->img.pixels_ptr = mlx_get_data_addr(f->img.img_ptr, &f->img.bpp,
+			&f->img.line_len, &f->img.endian);
 	if (!f->img.pixels_ptr)
 	{
 		mlx_destroy_image(f->mlx, f->img.img_ptr);

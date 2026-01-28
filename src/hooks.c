@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: osousa-d <osousa-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: otton-sousa <otton-sousa@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 04:02:06 by otton-sousa       #+#    #+#             */
-/*   Updated: 2026/01/27 11:47:33 by osousa-d         ###   ########.fr       */
+/*   Updated: 2026/01/28 12:13:42 by otton-sousa      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,5 @@ int	esc_handler(int button, t_fractal *f)
 {
 	if (button == KEY_ESC)
 		close_handler(f);
-
 	return (EXIT_SUCCESS);
 }

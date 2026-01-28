@@ -3,19 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   mapping.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: osousa-d <osousa-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: otton-sousa <otton-sousa@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 11:25:31 by osousa-d          #+#    #+#             */
-/*   Updated: 2026/01/27 11:25:32 by osousa-d         ###   ########.fr       */
+/*   Updated: 2026/01/28 12:10:32 by otton-sousa      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-double	map(double value, double in_min, double in_max, double out_min, double out_max)
+double	normalize(double value, double min, double max)
 {
-	double	cord_pixel;
+	return ((value - min) / (max - min));
+}
 
-	cord_pixel = out_min + (value - in_min) * (out_max - out_min) / (in_max - in_min);
-	return (cord_pixel);
+double	map(double norm, double out_min, double out_max)
+{
+	return (out_min + norm * (out_max - out_min));
 }

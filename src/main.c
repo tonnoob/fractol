@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: osousa-d <osousa-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: otton-sousa <otton-sousa@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 11:25:38 by osousa-d          #+#    #+#             */
-/*   Updated: 2026/01/27 11:50:39 by osousa-d         ###   ########.fr       */
+/*   Updated: 2026/01/28 12:02:22 by otton-sousa      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_fractal	f;
 
@@ -30,5 +30,3 @@ int main(int ac, char **av)
 	mlx_loop(f.mlx);
 	return (EXIT_SUCCESS);
 }
-
-

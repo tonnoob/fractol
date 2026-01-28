@@ -6,7 +6,7 @@
 /*   By: otton-sousa <otton-sousa@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 04:40:54 by otton-sousa       #+#    #+#             */
-/*   Updated: 2026/01/26 04:43:01 by otton-sousa      ###   ########.fr       */
+/*   Updated: 2026/01/28 12:19:57 by otton-sousa      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	error_exit(char *msg)
 	exit(EXIT_FAILURE);
 }
 
-void print_usage(void)
+void	print_usage(void)
 {
 	ft_putstr_fd("\n╔════════════════════════════════════╗\n", 2);
 	ft_putstr_fd("║         FRACT'OL - USE             ║\n", 2);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: osousa-d <osousa-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: otton-sousa <otton-sousa@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 11:25:15 by osousa-d          #+#    #+#             */
-/*   Updated: 2026/01/27 11:36:54 by osousa-d         ###   ########.fr       */
+/*   Updated: 2026/01/28 12:13:25 by otton-sousa      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ static int calculate_pixel(t_fractal *f, int px, int py)
 	int			iter;
 	int			color;
 
-	c.real = map(px, 0, WIDTH, f->x_min, f->x_max);
-	c.imag = map(py, 0, HEIGHT, f->y_max, f->y_min);
+	c.real = map(normalize(px, 0, WIDTH), f->x_min, f->x_max);
+	c.imag = map(normalize(py, 0, HEIGHT), f->y_max, f->y_min);
 	iter = 0;
 	if (f->type == MANDELBROT)
 	{
