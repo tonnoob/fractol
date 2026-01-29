@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otton-sousa <otton-sousa@student.42.fr>    +#+  +:+       +#+        */
+/*   By: osousa-d <osousa-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 04:02:06 by otton-sousa       #+#    #+#             */
-/*   Updated: 2026/01/28 12:13:42 by otton-sousa      ###   ########.fr       */
+/*   Updated: 2026/01/29 00:07:17 by osousa-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int	mouse_handler(int button, int x, int y, t_fractal *f)
 	double	mouse_im;
 	double	zoom_factor;
 
-	mouse_re = map(x, 0, WIDTH, f->x_min, f->x_max);
-	mouse_im = map(y, 0, HEIGHT, f->y_max, f->y_min);
+	mouse_re = map(normalize(x, 0, WIDTH), f->x_min, f->x_max);
+	mouse_im = map(normalize(y, 0, HEIGHT), f->y_max, f->y_min);
 	zoom_factor = 1.1;
 	if (button == MOUSE_WHEEL_UP)
 	{

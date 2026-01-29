@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: otton-sousa <otton-sousa@student.42.fr>    +#+  +:+       +#+         #
+#    By: osousa-d <osousa-d@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/11 20:54:01 by osousa-d          #+#    #+#              #
-#    Updated: 2025/11/09 22:49:50 by otton-sousa      ###   ########.fr        #
+#    Updated: 2026/01/29 01:10:29 by osousa-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,21 +28,21 @@ LIBFT = $(LIBFT_DIR)/libft.a
 all: $(NAME)
 
 $(NAME): $(OBJ) $(LIBFT)
-	ar rcs $(NAME) $(OBJ) $(LIBFT)
+	@ar rcs $(NAME) $(OBJ) $(LIBFT)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(LIBFT):
-	make -C $(LIBFT_DIR)
+	@make --no-print-directory -C $(LIBFT_DIR)
 
 clean: 
-	rm -f $(OBJ)
-	make clean -C $(LIBFT_DIR)
+	@rm -f $(OBJ)
+	@make --no-print-directory clean -C $(LIBFT_DIR)
 
 fclean: clean
-	rm -f $(NAME)
-	make fclean -C $(LIBFT_DIR)
+	@rm -f $(NAME)
+	@make --no-print-directory fclean -C $(LIBFT_DIR)
 
 re: fclean all
 

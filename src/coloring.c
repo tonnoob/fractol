@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   coloring.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otton-sousa <otton-sousa@student.42.fr>    +#+  +:+       +#+        */
+/*   By: osousa-d <osousa-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 07:03:33 by otton-sousa       #+#    #+#             */
-/*   Updated: 2026/01/28 12:08:17 by otton-sousa      ###   ########.fr       */
+/*   Updated: 2026/01/28 23:48:14 by osousa-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
-#include <math.h>
 
 int	get_color(int iter, int max_iter)
 {

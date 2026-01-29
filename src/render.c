@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otton-sousa <otton-sousa@student.42.fr>    +#+  +:+       +#+        */
+/*   By: osousa-d <osousa-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 11:25:15 by osousa-d          #+#    #+#             */
-/*   Updated: 2026/01/28 12:13:25 by otton-sousa      ###   ########.fr       */
+/*   Updated: 2026/01/28 23:46:37 by osousa-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-static void put_pixel_to_img(t_fractal *f, int x, int y, int color)
+void	put_pixel_to_img(t_fractal *f, int x, int y, int color)
 {
 	char	*dst;
 	int		offset;
@@ -24,7 +24,7 @@ static void put_pixel_to_img(t_fractal *f, int x, int y, int color)
 	*(unsigned int *)dst = color;
 }
 
-static int calculate_pixel(t_fractal *f, int px, int py)
+int	calculate_pixel(t_fractal *f, int px, int py)
 {
 	t_complex	c;
 	t_complex	z;
@@ -38,7 +38,7 @@ static int calculate_pixel(t_fractal *f, int px, int py)
 	{
 		z.real = 0;
 		z.imag = 0;
-		iter = fractal_iter(z, c, MAX_ITER); 
+		iter = fractal_iter(z, c, MAX_ITER);
 	}
 	if (f->type == JULIA)
 	{
@@ -52,11 +52,11 @@ static int calculate_pixel(t_fractal *f, int px, int py)
 	return (color);
 }
 
-void fractal_render(t_fractal *f)
+void	fractal_render(t_fractal *f)
 {
-	int py;
-	int px;
-	int color;
+	int	py;
+	int	px;
+	int	color;
 
 	py = 0;
 	while (py < HEIGHT)

@@ -57,7 +57,6 @@ After running the program with the arguments, a window will open displaying the 
 
 You can use the `mouse scroll` to zoom in and out, and close the program by clicking the `X` button or pressing the `ESC` key.
 
-
+---
 ## Resources ##
-
 I used ChatGPT (https://chatgpt.com/) to help me understand the calculations used to generate the **fractol**, organize the project (deciding the next steps), and translate the `README` into English.

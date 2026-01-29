@@ -3,16 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: otton-sousa <otton-sousa@student.42.fr>    +#+  +:+       +#+         #
+#    By: osousa-d <osousa-d@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/25 17:03:46 by osousa-d          #+#    #+#              #
-#    Updated: 2026/01/26 04:34:41 by otton-sousa      ###   ########.fr        #
+#    Updated: 2026/01/29 01:25:52 by osousa-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 CC = cc
+CFLAGS = -Wall -Wextra -Werror
 
 SRC =	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 		ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c \
@@ -25,24 +26,25 @@ SRC =	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 		ft_putendl_fd.c ft_putnbr_fd.c ft_issignal.c ft_atod.c \
 		ft_strcmp.c
 
-CFLAGS = -Wall -Wextra -Werror
-
-OBJ = $(SRC:.c=.o)
+OBJ_DIR = obj
+OBJ = $(SRC:%.c=$(OBJ_DIR)/%.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	@ar rcs $(NAME) $(OBJ)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+$(OBJ_DIR)/%.o: %.c
+	@mkdir -p $(OBJ_DIR)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
-clean:	
-	rm -f $(OBJ)
+clean:
+	@rm -rf $(OBJ_DIR)
 
-fclean:	clean
-	rm -f $(NAME)
+fclean: clean
+	@rm -f $(NAME)
 
-re:	fclean all
+re: fclean all
 
 .PHONY: all clean fclean re
+

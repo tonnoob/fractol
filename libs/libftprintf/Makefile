@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: otton-sousa <otton-sousa@student.42.fr>    +#+  +:+       +#+         #
+#    By: osousa-d <osousa-d@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/04 09:44:04 by otton-sousa       #+#    #+#              #
-#    Updated: 2026/01/26 01:59:19 by otton-sousa      ###   ########.fr        #
+#    Updated: 2026/01/29 01:15:24 by osousa-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,23 +25,23 @@ FT_PRINTF = $(FT_PRINTF_DIR)/*.o
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(FT_PRINTF)
-	cp $(LIBFT) $(NAME)
-	ar rcs $(NAME) $(FT_PRINTF)
+	@cp $(LIBFT) $(NAME)
+	@ar rcs $(NAME) $(FT_PRINTF)
 
 $(LIBFT):
-	make -C $(LIBFT_DIR)
+	@make --no-print-directory -C $(LIBFT_DIR)
 
 $(FT_PRINTF):
-	make -C $(FT_PRINTF_DIR)
+	@make --no-print-directory -C $(FT_PRINTF_DIR)
 
 clean: 
-	make clean -C $(LIBFT_DIR)
-	make clean -C $(FT_PRINTF_DIR)
+	@make --no-print-directory clean -C $(LIBFT_DIR)
+	@make --no-print-directory clean -C $(FT_PRINTF_DIR)
 
 fclean: clean
-	rm -f $(NAME)
-	make fclean -C $(LIBFT_DIR)
-	make fclean -C $(FT_PRINTF_DIR)
+	@rm -f $(NAME)
+	@make --no-print-directory fclean -C $(LIBFT_DIR)
+	@make --no-print-directory fclean -C $(FT_PRINTF_DIR)
 
 re: fclean all
 

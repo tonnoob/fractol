@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: otton-sousa <otton-sousa@student.42.fr>    +#+  +:+       +#+         #
+#    By: osousa-d <osousa-d@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/24 06:17:49 by osousa-d          #+#    #+#              #
-#    Updated: 2026/01/26 07:01:53 by otton-sousa      ###   ########.fr        #
+#    Updated: 2026/01/29 01:30:24 by osousa-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,23 +38,39 @@ LIBFTPRINTF = $(LIBFTPRINTF_DIR)/libftprintf.a
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 all: $(NAME)
 
 $(NAME): $(OBJ) $(LIBFTPRINTF)
-	$(CC) $(OBJ) $(MLXFLAGS) -L$(LIBFTPRINTF_DIR) -lftprintf -o $(NAME)
+	@$(CC) $(OBJ) $(MLXFLAGS) -L$(LIBFTPRINTF_DIR) -lftprintf -o $(NAME)
+	@echo "✅ Created fractol"
 
 $(LIBFTPRINTF):
-	make -C $(LIBFTPRINTF_DIR)
+	@make --no-print-directory -C $(LIBFTPRINTF_DIR)
+	@echo " "
+	@echo "                       +--Generated libft"
+	@echo "                       |"
+	@echo "        +--Generated printf"
+	@echo "        |"
+	@echo "        +--Generated MLX"
+	@echo "        |"
+	@echo "        |"
+	@echo "📦 Generated libraries"
+	@echo ""
+	@echo "         ⬇️"
+	@echo ""
 
 clean:
-	rm -f $(OBJ)
-	make clean -C $(LIBFTPRINTF_DIR)
+	@rm -f $(OBJ)
+	@rmdir $(OBJ_DIR) 2>/dev/null || true
+	@make --no-print-directory clean -C $(LIBFTPRINTF_DIR)
+	@echo "🗑️ Clean"
 
 fclean: clean
-	rm -f $(NAME)
-	make fclean -C $(LIBFTPRINTF_DIR)
+	@rm -f $(NAME)
+	@make --no-print-directory fclean -C $(LIBFTPRINTF_DIR)
+	@echo "🗑️ Full Clean"
 
 re: fclean all
 

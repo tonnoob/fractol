@@ -6,13 +6,13 @@
 /*   By: osousa-d <osousa-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 11:25:45 by osousa-d          #+#    #+#             */
-/*   Updated: 2026/01/27 11:26:34 by osousa-d         ###   ########.fr       */
+/*   Updated: 2026/01/28 23:42:23 by osousa-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-int fractal_iter(t_complex z, t_complex c, int max_iter)
+int	fractal_iter(t_complex z, t_complex c, int max_iter)
 {
 	int		iter;
 	double	temp_real;
@@ -25,5 +25,5 @@ int fractal_iter(t_complex z, t_complex c, int max_iter)
 		z.real = temp_real;
 		iter++;
 	}
-	return iter;
+	return (iter);
 }
